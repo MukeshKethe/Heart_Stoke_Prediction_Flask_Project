@@ -2,15 +2,14 @@ from flask import Flask, request, render_template
 import joblib 
 import numpy as np
 app = Flask(__name__)
-model = joblib.load("E:\Projects\Flask (Projects)\Heart_Stoke_Prediction_Project (Flask)\Project\Training\model")
-label1 = joblib.load ("E:\Projects\Flask (Projects)\Heart_Stoke_Prediction_Project (Flask)\Project\Training\mar_transform")
-label2 = joblib.load("E:\Projects\Flask (Projects)\Heart_Stoke_Prediction_Project (Flask)\Project\Training\\res_transform")
-column=joblib.load ("E:\Projects\Flask (Projects)\Heart_Stoke_Prediction_Project (Flask)\Project\Training\column")
+model = joblib.load('Provide the directory path for the "model" here, such as "C:/Your_Folder_Name(s)/Training/model"')
+label1 = joblib.load ('Provide the directory path for the "mar_transform" here, such as "C:/Your_Folder_Name(s)/Training/mar_transform"')
+label2 = joblib.load('Provide the directory path for the "res_transform" here, such as "C:/Your_Folder_Name(s)/Training/res_transform"')
+column=joblib.load ('Provide the directory path for the "column" here, such as "C:/Your_Folder_Name(s)/Training/column"')
 app = Flask(__name__)
-
 @app.route('/')
 def predict():
-    return render_template("Manual_predict.html")
+    return render_template("Manual_Predict.html")
 
 @app.route('/y_predict',methods=['POST'])
 def y_predict():
@@ -25,7 +24,7 @@ def y_predict():
     if(pred[0]==0):
         result="no chances of stroke"
     else:result="chances of stroke"
-    return render_template('Manual_predict.html', \
+    return render_template('Manual_Predict.html', \
     prediction_text=('There are \
         ',result))
 if __name__=='__main__':
