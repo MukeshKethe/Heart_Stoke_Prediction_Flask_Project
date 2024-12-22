@@ -2,10 +2,10 @@ from flask import Flask, request, render_template
 import joblib 
 import numpy as np
 app = Flask(__name__)
-model = joblib.load("E:\Projects\Flask (Projects)\Heart_Stoke_Prediction_Project (Flask)\Project\Flask_App\model")
-label1 = joblib.load ("E:\Projects\Flask (Projects)\Heart_Stoke_Prediction_Project (Flask)\Project\Flask_App\mar_transform")
-label2 = joblib.load("E:\Projects\Flask (Projects)\Heart_Stoke_Prediction_Project (Flask)\Project\Flask_App\\res_transform")
-column=joblib.load ("E:\Projects\Flask (Projects)\Heart_Stoke_Prediction_Project (Flask)\Project\Flask_App\column")
+model = joblib.load("E:\Projects\Flask (Projects)\Heart_Stoke_Prediction_Project (Flask)\Project\Training\model")
+label1 = joblib.load ("E:\Projects\Flask (Projects)\Heart_Stoke_Prediction_Project (Flask)\Project\Training\mar_transform")
+label2 = joblib.load("E:\Projects\Flask (Projects)\Heart_Stoke_Prediction_Project (Flask)\Project\Training\\res_transform")
+column=joblib.load ("E:\Projects\Flask (Projects)\Heart_Stoke_Prediction_Project (Flask)\Project\Training\column")
 app = Flask(__name__)
 
 @app.route('/')
